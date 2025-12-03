@@ -25,7 +25,6 @@ class TimeLimit(gym.Wrapper):
         self._step = 0
         return self.env.reset()
 
-
 class NormalizeActions(gym.Wrapper):
     def __init__(self, env):
         super().__init__(env)
@@ -42,8 +41,7 @@ class NormalizeActions(gym.Wrapper):
         original = (action + 1) / 2 * (self._high - self._low) + self._low
         original = np.where(self._mask, original, action)
         return self.env.step(original)
-
-
+    
 class OneHotAction(gym.Wrapper):
     def __init__(self, env):
         assert isinstance(env.action_space, gym.spaces.Discrete)
@@ -71,7 +69,6 @@ class OneHotAction(gym.Wrapper):
         reference = np.zeros(actions, dtype=np.float32)
         reference[index] = 1.0
         return reference
-
 
 class RewardObs(gym.Wrapper):
     def __init__(self, env):

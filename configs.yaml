@@ -176,12 +176,12 @@ memorymaze:
   imag_gradient: 'reinforce'
   task: 'memorymaze_9x9'
 
-miniworld_hallway:
+miniworld:
   steps: 1e8
   action_repeat: 2
   actor: {dist: 'onehot', std: 'none'}
   imag_gradient: 'reinforce'
-  task: 'MiniWorld-Hallway-v0'
+  task: 'miniworld_MiniWorld-Hallway-v0'
 
 debug:
   debug: True
