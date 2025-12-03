@@ -193,8 +193,10 @@ def make_env(config, mode, id):
 
         env = minecraft.make_env(task, size=config.size, break_speed=config.break_speed)
         env = wrappers.OneHotAction(env)
-    else:
-        raise NotImplementedError(suite)
+    elif suite == "miniworld":
+        import envs.miniworld as miniworld
+        env = miniworld.MiniWorld(task)
+        env = wrappers.OneHotAction(env)
     env = wrappers.TimeLimit(env, config.time_limit)
     env = wrappers.SelectAction(env, key="action")
     env = wrappers.UUID(env)
