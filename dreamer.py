@@ -4,7 +4,8 @@ import os
 import pathlib
 import sys
 
-os.environ["MUJOCO_GL"] = "osmesa"
+os.environ["MUJOCO_GL"] = "egl"
+os.environ["PYOPENGL_PLATFORM"] = "egl"
 
 import numpy as np
 import ruamel.yaml as yaml
