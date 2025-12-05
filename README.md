@@ -11,7 +11,7 @@ pip install -r requirements.txt
 ```
 Run training on DMC Vision:
 ```
-python3 dreamer.py --configs dmc_vision --task dmc_walker_walk --logdir ./logdir/dmc_walker_walk
+python3 dreamer.py --configs miniworld --logdir ./logdir/miniworld
 ```
 Monitor results:
 ```
@@ -19,12 +19,10 @@ tensorboard --logdir ./logdir
 ```
 To set up Atari or Minecraft environments, please check the scripts located in [env/setup_scripts](https://github.com/NM512/dreamerv3-torch/tree/main/envs/setup_scripts).
 
-### Method 2: Docker
-
-Please refer to the Dockerfile for the instructions, as they are included within.
-
 ## Benchmarks
-So far, the following benchmarks can be used for testing.
+
+**Please note that this code has been adapted for specific use with the [MiniWorld](https://miniworld.farama.org/) environments. Other benchmarks have not been tested as they were out of scope for this project.**
+
 | Environment        | Observation | Action | Budget | Description |
 |-------------------|---|---|---|-----------------------|
 | [DMC Proprio](https://github.com/deepmind/dm_control) | State | Continuous | 500K | DeepMind Control Suite with low-dimensional inputs. |
@@ -34,16 +32,6 @@ So far, the following benchmarks can be used for testing.
 | [Minecraft](https://github.com/minerllabs/minerl) | Image and State |Discrete |100M| Vast 3D open world.|
 | [Memory Maze](https://github.com/jurgisp/memory-maze) | Image |Discrete |100M| 3D mazes to evaluate RL agents' long-term memory.|
 
-## Results
-#### DMC Proprio
-![dmcproprio](imgs/dmcproprio.png)
-#### DMC Vision
-![dmcvision](imgs/dmcvision.png)
-#### Atari 100k
-![atari100k](imgs/atari100k.png)
-
-#### Crafter
-<img src="https://github.com/NM512/dreamerv3-torch/assets/70328564/a0626038-53f6-4300-a622-7ac257f4c290" width="300" height="150" />
 
 ## Acknowledgments
 This code is heavily inspired by the following works:
@@ -52,3 +40,5 @@ This code is heavily inspired by the following works:
 - jsikyoon's Dreamer-v2 pytorch implementation: https://github.com/jsikyoon/dreamer-torch
 - RajGhugare19's Dreamer-v2 pytorch implementation: https://github.com/RajGhugare19/dreamerv2
 - denisyarats's DrQ-v2 original implementation: https://github.com/facebookresearch/drqv2
+
+This code is a fork of https://github.com/NM512/dreamerv3-torch.
