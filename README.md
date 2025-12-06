@@ -1,4 +1,7 @@
 # dreamerv3-torch
+
+**Note: this repository has been adapted to work with the MiniWorld environments, using the gymnasium library. There may be errors with other environments, due to library version errors.**
+
 Pytorch implementation of [Mastering Diverse Domains through World Models](https://arxiv.org/abs/2301.04104v1). DreamerV3 is a scalable algorithm that outperforms previous approaches across various domains with fixed hyperparameters.
 
 ## Instructions
